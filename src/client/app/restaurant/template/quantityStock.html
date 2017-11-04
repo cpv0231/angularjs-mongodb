@@ -1,0 +1,25 @@
+
+
+
+<div class="form-group" ng-class="{ 'has-error': formProduct.quantityStock.$touched && formProduct.quantityStock.$invalid}">
+
+  <label>Quantity Stock:</label>
+  <div>
+    <input type="text" name="quantityStock" class="form-control" placeholder="Enter quantity stock"
+           ng-model="vm.products.quantityStock" value="vm.products.quantityStock"
+           required
+           ng-pattern="/^[0-9]{1,7}$/">
+
+    <span ng-class="{'glyphicon glyphicon-remove': formProduct.quantityStock.$error}"
+          ng-if="formProduct.quantityStock.$dirty && formProduct.quantityStock.$invalid || formProduct.quantityStock.$touched && formProduct.quantityStock.$invalid "></span>
+    <span ng-class="{'glyphicon glyphicon-ok': formProduct.quantityStock.$valid}"
+          ng-if="formProduct.quantityStock.$touched && formProduct.quantityStock.$valid || formProduct.quantityStock.$dirty && formProduct.quantityStock.$valid"></span>
+  </div>
+  <div class="help-block" ng-messages="formProduct.quantityStock.$error" ng-if="formProduct.quantityStock.$dirty || formProduct.quantityStock.$touched">
+    <p ng-message="required">Quantity is required.</p>
+    <p ng-message="pattern">Please enter number only.</p>
+  </div>
+</div>
+
+
+

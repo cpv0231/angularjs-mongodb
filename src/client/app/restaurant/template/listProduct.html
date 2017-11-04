@@ -1,0 +1,38 @@
+<div class="col-md-12">
+  <div class="widget wgreen">
+    <div ht-widget-header title="Products" allow-collapse="true">
+    </div>
+    <div class="widget-content text-center text-info">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Product Name </th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Quantity in stock</th>
+          <th>Option</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="p in vm.productsDisplay track by $index">
+          <td>{{p.productName}}</td>
+          <td>{{p.category}}</td>
+          <td>{{p.description}}</td>
+          <td>₱ {{p.price}}</td>
+          <td>{{p.quantityStock}}</td>
+          <td>  
+            <a ui-sref="restaurant.show({id:p._id})" class="btn btn-info"> Show  </a>
+            <a ui-sref="restaurant.edit({id:p._id})" class="btn btn-success"><span class="glyphicon glyphicon-edit"> </span> Edit  </a></li>
+            <a ng-click="vm.deleteProduct(p._id,$index)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span> Delete </a>
+
+          </td>
+         </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="widget-foot">
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

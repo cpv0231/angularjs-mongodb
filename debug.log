@@ -1,0 +1,25 @@
+[0327/154522.164:ERROR:exception_handler_server.cc(524)] ConnectNamedPipe: The pipe is being closed. (0xE8)
+[0327/154958.783:ERROR:exception_handler_server.cc(524)] ConnectNamedPipe: The pipe is being closed. (0xE8)
+[0327/192845.361:ERROR:exception_handler_server.cc(524)] ConnectNamedPipe: The pipe is being closed. (0xE8)
+[0331/103714.326:ERROR:exception_handler_server.cc(524)] ConnectNamedPipe: The pipe is being closed. (0xE8)
+[0526/133143.939:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/005541.779:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/010117.592:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/011919.722:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/015111.851:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/094348.939:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/094916.494:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/095006.428:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/095256.350:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/095451.933:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/095912.916:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/100302.896:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/100627.333:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/121254.283:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/123537.351:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/132013.636:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/132454.883:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/142025.866:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/151400.107:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/155051.766:ERROR:crash_report_database_win.cc(426)] unexpected header
+[0527/155542.090:ERROR:crash_report_database_win.cc(426)] unexpected header

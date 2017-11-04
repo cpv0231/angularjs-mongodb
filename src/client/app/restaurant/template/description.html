@@ -1,0 +1,27 @@
+
+<div class="form-group" ng-class="{ 'has-error': formProduct.description.$touched && formProduct.description.$invalid}">
+
+  <label>Description :</label>
+  <div>
+    <input type="text" name="description" class="form-control" placeholder="Enter product description"
+           ng-model="vm.products.description"
+           value="vm.products.description"
+           ng-minlength="5"
+           ng-maxlength="200"
+           required
+           ng-pattern="/^[a-zA-Z ]{1,200}$/"/>
+
+    <span ng-class="{'glyphicon glyphicon-remove': formProduct.description.$error}"
+          ng-if="formProduct.description.$dirty && formProduct.description.$invalid || formProduct.description.$touched && formProduct.description.$invalid "></span>
+    <span ng-class="{'glyphicon glyphicon-ok': formProduct.description.$valid}"
+          ng-if="formProduct.description.$touched && formProduct.description.$valid || formProduct.description.$dirty && formProduct.description.$valid"></span>
+  </div>
+  <div class="help-block" ng-messages="formProduct.description.$error" ng-if="formProduct.description.$dirty || formProduct.description.$touched">
+    <p ng-message="minlength">Description is too short.</p>
+    <p ng-message="maxlength">Description is too long.</p>
+    <p ng-message="required">Description is required.</p>
+    <p ng-message="pattern">Please enter only character only.</p>
+  </div>
+</div>
+
+

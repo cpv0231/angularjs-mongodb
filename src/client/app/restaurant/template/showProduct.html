@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="col-md-12">
+    <div class="widget wgreen">
+      <div ht-widget-header title="{{vm.news.title}}" allow-collapse="true"></div>
+      <div class="widget-content">
+        <div class="widget-foot">
+          <div class="clearfix"><br>
+            <form>
+              <div class="form-group">
+                <label class="form-control">Name: {{ vm.products.productName }}</label>
+                <label class="form-control">Description: {{ vm.products.description }}</label>
+                <label class="form-control">Category: {{ vm.products.category }}</label>
+                <label class="form-control">Price: {{ vm.products.price }}</label>
+                <label class="form-control">Quantity Stock: {{ vm.products.quantityStock }}</label>
+                <a ui-sref="dashboard.list" class="btn btn-default"> Cancel</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

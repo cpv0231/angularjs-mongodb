@@ -1,0 +1,50 @@
+
+<br>
+<div class="container" >
+  <div class="col-md-12">
+    <div class="widget">
+      <div ht-widget-header title="Edit Product" allow-collapse="true"></div>
+      <div class="widget-content">
+        <div class="widget-foot">
+          <div class="clearfix"><br>
+
+
+            <form name="formProduct" method="post" enctype="multipart/form-data" >
+              <div class="col-md-6">
+
+                <img ng-show="formProduct.photo.$valid" ngf-thumbnail="vm.products.photo" class="img-rounded"  width="400" height="300">
+                <br><br><br>
+
+                <input type="file" ngf-select ng-model="vm.products.photo" name="photo"
+                       accept="image/*">
+
+
+
+              </div>
+              <div class="col-md-6">
+                <div product-name></div>
+                <div category></div>
+                <div description ></div>
+                <div price></div>
+                <div quantity-stock></div>
+
+                <input type="button" value="Back" ng-click="vm.cancel()" class=" hotelRegister btn btn-warning col-md-3 pull-left">  </input>
+                <input type="submit" ng-click="vm.update(vm.products._id)" value="Update" class="btn btn-primary pull-left  hotelRegister col-md-3"
+                       ng-disabled="formProduct.productName.$invalid
+                                      || formProduct.category.$invalid
+                                       ||formProduct.description.$invalid
+                                      ||formProduct.price.$invalid
+                                      ||formProduct.quantityStock.$invalid
+                                       ">
+
+                </input>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

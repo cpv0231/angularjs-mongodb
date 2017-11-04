@@ -1,0 +1,135 @@
+
+
+<!--<br>-->
+<!--<div class="container">-->
+  <!--<div class="col-md-4">-->
+  <!--<button type="button" name="category" ng-click="category='breakfast'" value="Breakfast">Breakfast</button>-->
+  <!--<button type="button" name="category" ng-click="category='Lunch'" value="Breakfast">Lunch</button>-->
+  <!--<button type="button" name="category" ng-click="category='breakfast'" value="Breakfast">Breakfast</button>-->
+  <!--<button type="button" name="category" ng-click="category='breakfast'" value="Breakfast">Breakfast</button>-->
+
+  <!--<div ng-repeat="i in vm.productssss | filter:category ">-->
+     <!--<div ng-click="vm.select(i,1)"> {{i.productName}}</div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-md-8" ng-repeat="selected in vm.selected track by $index">-->
+    <!--{{selected.productName}}-->
+    <!--{{selected.price}}-->
+    <!--{{selected.qty}}-->
+  <!--<div class="col-md-1">-->
+      <!--<span class="badge badge-left" ng-bind="selected.qty"></span>-->
+  <!--</div>-->
+
+  <!--</div>-->
+
+  <!--<button class="btn" ng-click="vm.plus()">add</button>-->
+
+  <!--{{vm.ilan}}-->
+<!--</div>-->
+
+<br>
+ <section class="matter">
+    <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+          <div class="widget ">
+            <div ht-widget-header title="Products" allow-collapse="true">
+            </div>
+            <div class="widget-content text-center text-info">
+              <table  st-table="productsDisplay" st-safe-src="vm.productsDisplay" class="table table-striped">
+                <thead>
+                <div class="Search">
+                   <div class="col-md-10 ">
+                     <h4 style="text-align:left;">Search: <input type="text" ng-model="query"></h4>
+                   </div>
+                </div>
+                    <div class="col-md-2">
+                      <button class="btn-add">
+                        <a ui-sref="add">
+                          <span class="glyphicon glyphicon-plus"></span>
+                          Add New Item
+                        </a>
+                      </button>
+                    </div>
+
+                </thead>
+                <br><br>
+                <thead>
+                <tr>
+                  <th st-sort="productName">Product Name </th>
+                  <th st-sort="category">Category</th>
+                  <th st-sort="description">Description</th>
+                  <th st-sort="price ">Price</th>
+                  <th st-sort="quantityStock ">Quantity in stock</th>
+                  <th>Option</th>
+                </tr>
+                </thead>
+                <tbody  ng-repeat="p in productsDisplay | filter:query" >
+                <tr ng-click="isOpen=!isOpen">
+                  <td ><img src="{{p.photo || 'https://vignette4.wikia.nocookie.net/uncyclopedia/images/2/21/RandomImage.png/revision/latest?cb=20061224061022' }}"
+                           class="img-circle" width="20" height="20">
+                    {{p.productName}}
+                  </td>
+                  <td >{{p.category}}</td>
+                  <td >{{p.description}}</td>
+                  <td >₱ {{p.price}}</td>
+                  <td >{{p.quantityStock}}</td>
+                  <td>
+                    <a ng-click="vm.show(p)" class="btn btn-info"> Detail</a>
+                    <a ng-click="vm.edit(p)" class="btn btn-success"><span class="glyphicon glyphicon-edit"> </span> Edit  </a></li>
+                    <a ng-click="vm.deleteProduct(p._id,$index)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"> </span> Delete </a>
+                  </td>
+                </tr>
+                <tr ng-if="isOpen">
+                  <div class="col-md-12">
+                    <td>
+                      <div class="col-md-4">
+                      <img src="{{p.photo || 'https://static.pexels.com/photos/65045/pexels-photo-65045.jpeg' }}"
+                              class="img-circle" width="100" height="100">
+                      </div>
+                      <div class="col-md-8">
+                         <h3>{{p.productName}}</h3>
+                        <h6>Category:<strong> {{p.category}}</strong> </h6>
+                        <h6> Description: <strong>{{p.description}}</strong> </h6>
+                        <h6 >Price: ₱ <strong>{{p.price}} </strong> </h6>
+                      </div>
+                    <td>
+
+                    </td>
+                  </div>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <td colspan="6" class="text-center">
+                    <div  st-items-by-page="6" st-pagination="5"></div>
+                  </td>
+                </tr>
+                </tfoot>
+              </table>
+
+            </div>
+            <div class="widget-foot">
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!--<div class="container" st-table="productsDisplay" st-safe-src="vm.productsDisplay">-->
+  <!--<table class="table table-striped">-->
+    <!--<thead>-->
+      <!--<th st-sort="productName">Product Name</th>-->
+      <!--<th st-sort="category">Category</th>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+      <!--<tr ng-repeat="row in productsDisplay">-->
+        <!--<td>{{row.productName}}</td>-->
+        <!--<td>{{row.category}}</td>-->
+      <!--</tr>-->
+    <!--</tbody>-->
+  <!--</table>-->
+<!--</div>-->
+

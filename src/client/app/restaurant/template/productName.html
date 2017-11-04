@@ -1,0 +1,26 @@
+
+<div class="form-group" ng-class="{ 'has-error': formProduct.productName.$touched && formProduct.productName.$invalid}">
+
+  <label>Product name:</label>
+  <div>
+    <input type="text" name="productName" class="form-control" placeholder="Enter your product name"
+           ng-model="vm.products.productName" value="vm.products.productName"
+           ng-minlength="2"
+           ng-maxlength="50"
+           required
+           ng-pattern="/^[a-zA-Z ]{1,50}$/"/>
+
+    <span ng-class="{'glyphicon glyphicon-remove': formProduct.productName.$error}"
+          ng-if="formProduct.productName.$dirty && formProduct.productName.$invalid || formProduct.productName.$touched && formProduct.productName.$invalid "></span>
+    <span ng-class="{'glyphicon glyphicon-ok': formProduct.productName.$valid}"
+          ng-if="formProduct.productName.$touched && formProduct.productName.$valid || formProduct.productName.$dirty && formProduct.productName.$valid"></span>
+  </div>
+  <div class="help-block" ng-messages="formProduct.productName.$error" ng-if="formProduct.productName.$dirty || formProduct.productName.$touched">
+    <p ng-message="minlength">Your product name is too short.</p>
+    <p ng-message="maxlength">Your product name is too long.</p>
+    <p ng-message="required">Your product name is required.</p>
+    <p ng-message="pattern">Please enter character only.</p>
+  </div>
+</div>
+
+

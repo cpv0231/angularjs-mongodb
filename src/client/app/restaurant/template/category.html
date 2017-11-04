@@ -1,0 +1,23 @@
+
+<div class="form-group" ng-class="{ 'has-error': formProduct.category.$touched && formProduct.category.$invalid}">
+  <label>Product category name:</label>
+  <div>
+    <select ng-model="vm.products.category" name="category" ng-options="item for item in vm.categories" required>
+    </select>
+
+    <span ng-class="{'glyphicon glyphicon-remove': formProduct.category.$error}"
+          ng-if="formProduct.category.$dirty && formProduct.category.$invalid || formProduct.category.$touched && formProduct.category.$invalid "></span>
+    <span ng-class="{'glyphicon glyphicon-ok': formProduct.category.$valid}"
+          ng-if="formProduct.category.$touched && formProduct.category.$valid || formProduct.category.$dirty && formProduct.category.$valid"></span>
+  </div>
+  <div class="help-block" ng-messages="formProduct.category.$error" ng-if="formProduct.category.$dirty || formProduct.category.$touched">
+     <p ng-message="required">Category is required.</p>
+  </div>
+</div>
+
+
+<!--<select ng-model="vm.products.category" name="category" class="form-control" ng-options="category.name for category in vm.categories" required>-->
+  <!--<option value="">-&#45;&#45;Please select-&#45;&#45;</option> &lt;!&ndash; not selected / blank option &ndash;&gt;-->
+<!--</select>-->
+<!--{{vm.products.category}}-->
+

@@ -1,0 +1,23 @@
+
+<div class="form-group" ng-class="{ 'has-error': formProduct.price.$touched && formProduct.price.$invalid}">
+
+  <label>Product price:</label>
+  <div>
+    <input type="text" name="price" class="form-control" placeholder="Enter product price"
+           ng-model="vm.products.price" value="vm.product.price"
+           required
+           ng-pattern="/^[0-9]{1,7}$/">
+
+    <span ng-class="{'glyphicon glyphicon-remove': formProduct.price.$error}"
+          ng-if="formProduct.price.$dirty && formProduct.price.$invalid || formProduct.price.$touched && formProduct.price.$invalid "></span>
+    <span ng-class="{'glyphicon glyphicon-ok': formProduct.price.$valid}"
+          ng-if="formProduct.price.$touched && formProduct.price.$valid || formProduct.price.$dirty && formProduct.price.$valid"></span>
+  </div>
+  <div class="help-block" ng-messages="formProduct.price.$error" ng-if="formProduct.price.$dirty || formProduct.price.$touched">
+    <p ng-message="required">Price is required.</p>
+    <p ng-message="pattern">Please enter number only.</p>
+  </div>
+</div>
+
+
+

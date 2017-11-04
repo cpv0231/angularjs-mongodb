@@ -1,0 +1,64 @@
+
+<br>
+<div class="container">
+  <div class="col-md-12">
+    <div class="widget">
+      <div ht-widget-header title="Add New Item" allow-collapse="true"></div>
+      <div class="widget-content">
+        <div class="widget-foot">
+          <div class="clearfix"><br>
+            <form name="formProduct" method="post" enctype="multipart/form-data" >
+              <div class="col-md-6">
+                <img ng-show="formProduct.photo.$valid" ngf-thumbnail="vm.products.photo" class="img-rounded"  width="400" height="300">
+                <img src="https://vignette4.wikia.nocookie.net/uncyclopedia/images/2/21/RandomImage.png/revision/latest?cb=20061224061022" class="img-rounded" ng-if="formProduct.photo.$invalid"  alt="Cinque Terre" width="400" height="300">
+                 <br><br><br>
+                <input type="file" ngf-select ng-model="vm.products.photo" name="photo"
+                       accept="image/*"  required
+                       ngf-model-invalid="errorFile">
+                <i ng-show="formProduct.photo.$error.required">*required</i><br>
+              </div>
+              <div class="col-md-6">
+                  <div product-name></div>
+                  <div category></div>
+                  <div description ></div>
+                  <div price></div>
+                  <div quantity-stock></div>
+                  <input type="button" value="Back" ng-click="vm.cancel()" class=" hotelRegister btn btn-warning col-md-3 pull-left">  </input>
+                  <input type="submit" value="Save" ng-click="vm.post()" class="btn btn-primary pull-left  hotelRegister col-md-3"
+                         ng-disabled="formProduct.productName.$invalid
+                                          || formProduct.category.$invalid
+                                           ||formProduct.description.$invalid
+                                          ||formProduct.price.$invalid
+                                          ||formProduct.quantityStock.$invalid
+                                          ||formProduct.photo.$invalid">
+
+                  </input>
+               </div>
+            </form>
+
+
+
+          <!--&lt;!&ndash;actioooon&ndash;&gt;-->
+          <!--<form ng-submit="vm.post()" name="upload" enctype="multipart/form-data" method="post" >-->
+          <!--<div class="button" ngf-select ng-model="vm.products.photo" name="photo" ngf-pattern="'image/*'"-->
+          <!--ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="50"-->
+          <!--ngf-resize="{width: 100, height: 100}">Select</div>-->
+          <!--<input type="submit">-->
+          <!--{{vm.products}}-->
+          <!--</form>-->
+            <!--<pre>fileModel</pre>-->
+            <!--<form  name="upload" enctype="multipart/form-data" method="post" >-->
+              <!--<input ty
+              pe="photo" name="photo" photo-model="vm.products.photo">-->
+              <!--<input type="submit" name="submit" value="submit" ng-click="vm.post()">-->
+            <!--</form>-->
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<br><br><br>
